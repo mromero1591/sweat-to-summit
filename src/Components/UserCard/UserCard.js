@@ -5,10 +5,10 @@ export default function UserCard(props) {
   return (
     <Link to="/dashboard" className="ui centered card">
       <div className="image">
-        <img src={props.profilePic} />
+        <img src={props.profilePic} alt="profile" />
       </div>
       <div className="content">
-        <a className="header">{props.user.name}</a>
+        <p className="header">{props.user.name}</p>
       </div>
     </Link>
   );
