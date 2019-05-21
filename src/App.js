@@ -9,7 +9,7 @@ function App(props) {
   const [activeDashboard, setActiveDashboard] = useState(true);
   const [activeLeaderBoard, setActiveLeaderBoard] = useState(false);
   return (
-    <div className="ui container">
+    <div className="ui container ">
       <h2 className="header logo">Sweat to Summit</h2>
 
       <div className="ui tabular menu">
