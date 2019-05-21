@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import "./styles/semantic.min.css";
+import "./App.scss";
 
-function App() {
+import routes from "./routes";
+
+function App(props) {
+  const [activeDashboard, setActiveDashboard] = useState(true);
+  const [activeLeaderBoard, setActiveLeaderBoard] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <div className="ui container">
+      <h2 className="header logo">Sweat to Summit</h2>
+
+      <div className="ui tabular menu">
+        <Link
+          to="/dashboard"
+          className={`item ${
+            props.location.pathname === "/dashboard" ? "active" : ""
+          }`}
         >
-          Learn React
-        </a>
-      </header>
+          Dashboard
+        </Link>
+        <Link
+          to="/leaderboard"
+          className={`item ${
+            props.location.pathname === "/leaderboard" ? "active" : ""
+          }`}
+        >
+          Leaderboard
+        </Link>
+      </div>
+      {routes}
     </div>
   );
 }
