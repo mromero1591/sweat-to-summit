@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+
+import { user, userContext } from "./userContext";
+
 import "./styles/semantic.min.css";
 import "./App.scss";
 
 import routes from "./routes";
 
+import Navbar from "./Components/Navbar/Navbar";
+
 function App(props) {
+  const currentUser = useContext(userContext);
   return (
     <div className="ui container ">
-      <h2 className="header logo">Sweat to Summit</h2>
+      <Navbar />
 
       <div className="ui tabular menu">
         <Link

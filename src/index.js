@@ -7,7 +7,7 @@ import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
   <Router>
-    <Route path="/" component={App} />
+    <Route component={App} />
   </Router>,
   document.getElementById("root")
 );

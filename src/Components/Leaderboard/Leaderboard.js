@@ -42,7 +42,7 @@ export default function Leaderboard() {
     <div className="container ui stackable two column padded grid">
       <div className="column">
         <h2 className="title">Current Leader</h2>
-        <UserCard user={users[0]} profilePic={mark} />
+        <UserCard user={users[0]} profilePic={mark} center={true} />
       </div>
 
       <div className="column container">

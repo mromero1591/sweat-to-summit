@@ -6,3 +6,7 @@ $main-color: #ce213b;
   color: $main-color;
   padding-top: 20px;
 }
+
+.ui.card:last-child {
+  padding: 20px;
+}

@@ -6,7 +6,7 @@ import Leaderboard from "./Components/Leaderboard/Leaderboard";
 
 export default (
   <Switch>
-    <Route path="/dashboard" component={Dashboard} />
+    <Route exact path="/dashboard" component={Dashboard} />
     <Route path="/leaderboard" component={Leaderboard} />
   </Switch>
 );

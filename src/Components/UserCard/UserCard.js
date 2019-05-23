@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 
 export default function UserCard(props) {
   return (
-    <Link to="/dashboard" className="ui centered card">
+    <Link
+      to="/dashboard"
+      className={`ui raised card ${props.center ? "centered" : ""}`}
+    >
       <div className="image">
         <img src={props.profilePic} alt="profile" />
       </div>
