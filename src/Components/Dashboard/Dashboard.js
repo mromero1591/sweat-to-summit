@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Droplet, Activity, Coffee, Sunset } from "react-feather";
 import { auth } from "../../firebase";
 
@@ -6,15 +6,11 @@ import TrackerCard from "../TrackerCard/TrackerCard";
 import UserCard from "../UserCard/UserCard";
 import mark from "../../assets/mark.png";
 import DayTable from "../DayTable/DayTable";
+import { UserContext } from "../../userContext";
 
 export default function Dashboard(props) {
-  const [currentUser, setCurrentUser] = useState(null);
-
-  useEffect(() => {
-    setCurrentUser(auth.currentUser);
-  });
-  console.log(currentUser);
-
+  const user = useContext(UserContext);
+  console.log(user["currentUser"]);
   let days = [
     {
       date: "May 22nd",
@@ -43,7 +39,7 @@ export default function Dashboard(props) {
         <div className="container ui two column grid">
           <div className="column">
             <UserCard
-              profilePic={currentUser ? currentUser.photoURL : mark}
+              profilePic={user ? user.photoURL : mark}
               user={{ name: "Mark" }}
               center={false}
             />
